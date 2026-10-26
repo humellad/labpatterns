@@ -2,6 +2,7 @@ package observer;
 
 import java.util.Observable;
 
+import adapter2.ShowPacientTableGUI;
 import domain.Covid19Pacient;
 import factory.SymptomFactory;
 
@@ -12,13 +13,14 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		SymptomFactory sf = new SymptomFactory();
-		Covid19Pacient pacient1=new Covid19Pacient("aitor", 35, sf);
-		new PacientObserverGUI (pacient1);
-		new PacientSymptomGUI (pacient1);
-		new PacientThermometerGUI (pacient1);
-		Covid19Pacient pacient2=new Covid19Pacient("Anne", 22, sf);
-		new PacientObserverGUI (pacient2);
-		new PacientSymptomGUI (pacient2);
+		Covid19Pacient pacient=new Covid19Pacient("aitor", 35, sf);
+		new PacientObserverGUI (pacient);
+		new PacientSymptomGUI (pacient);
+		new PacientThermometerGUI (pacient);
+		ShowPacientTableGUI gui=new ShowPacientTableGUI(pacient);
+		gui.setPreferredSize(
+			      new java.awt.Dimension(300, 200));
+		gui.setVisible(true);
 	}
 
 
