@@ -22,8 +22,7 @@ public class Covid19PacientInvertedIterator implements InvertedIterator{
 
 	@Override
 	public boolean hasPrevious() {
-		// TODO Auto-generated method stub
-		return false;
+		return pos>=0;
 	}
 
 	@Override
