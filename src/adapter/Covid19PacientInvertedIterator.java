@@ -15,8 +15,9 @@ public class Covid19PacientInvertedIterator implements InvertedIterator{
 	}
 	@Override
 	public Object previous() {
-		// TODO Auto-generated method stub
-		return null;
+		Symptom s = sintomas.get(pos);
+		pos-=1;
+		return s;
 	}
 
 	@Override
@@ -27,7 +28,7 @@ public class Covid19PacientInvertedIterator implements InvertedIterator{
 
 	@Override
 	public void goLast() {
-		// TODO Auto-generated method stub
+		pos=sintomas.size()-1;
 		
 	}
 
